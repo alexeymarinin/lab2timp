@@ -1,1 +1,27 @@
-
+# включить  < stdio.h >
+# включить  < iostream >
+# включить  < cctype >
+# включить  " PerestanCipher.h "
+# include  < locale >
+используя  пространство имен  std ;
+ проверка недействительности ( const wstring & Text, const  int & key)
+{
+    wstring s = Текст;
+    попробуйте {
+        PerestanCipher SKEY (ключ);
+        wcout << skey. CoderPerestanCipher (ключ, s) << endl;
+        wstring g = skey. CoderPerestanCipher (ключ, s);
+        wcout << skey. DecoderPerestanCipher (ключ, g) << endl;
+    } catch ( const cipher_error & e) {
+        cerr << " Ошибка: " << e. what () << endl;
+    }
+}
+int  main ()
+{
+    локаль loc ( " ru_RU.UTF-8 " );
+    locale :: global (место);
+    чек ( Л " ПРОГРАММИРОВАНИЕ " , 8 );
+    чек ( Л " ПРОГРАММИРОВАНИЕ " , 10 );
+    проверьте ( L " LDFHFEUFHWBCD " , 5 );
+    возврат  0 ;
+}
